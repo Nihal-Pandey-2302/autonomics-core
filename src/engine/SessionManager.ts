@@ -2,7 +2,7 @@ import { Simulation } from "./Simulation.js";
 import type { SimulationOptions } from "./Simulation.js";
 
 const SESSION_TIMEOUT_MS = 240_000; // 4 minutes
-const REAL_TX_LIMIT      = 50;
+const REAL_TX_LIMIT      = 250; // Massively increased for hackathon presentation
 
 export type SessionMode = "REAL" | "SIMULATED";
 

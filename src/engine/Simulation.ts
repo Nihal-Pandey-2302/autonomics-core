@@ -86,13 +86,13 @@ export class Simulation extends EventEmitter {
     }
 
     // Force first 5 tx to be on-chain for instant trust signals.
-    // After that use hybrid ~35% real, always respecting budget ceiling.
+    // After that use hybrid ~85% real, always respecting budget ceiling.
     const EARLY_GUARANTEE = 5;
     const withinBudget = this.realTxCount < this.options.realTxLimit;
     const useReal = !forceSimulate
       && this.options.allowRealTx
       && withinBudget
-      && (this.realTxCount < EARLY_GUARANTEE || this.rng.chance(0.35));
+      && (this.realTxCount < EARLY_GUARANTEE || this.rng.chance(0.85));
 
     if (useReal) {
       this.realTxCount++;

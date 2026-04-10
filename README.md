@@ -171,7 +171,7 @@ stateDiagram-v2
 
 ## ⛓ Proof of Real Transactions
 
-The first 5 transactions of every session are **guaranteed on-chain** with no randomness and no fallback. After that, ~35% of transactions continue settling on Stellar until the per-session budget is reached.
+The first 5 transactions of every session are **guaranteed on-chain** with no randomness and no fallback. After that, a massive ~85% of transactions continue settling on Stellar until the per-session budget (250 tx) is reached.
 
 Every real transaction produces a `txHash`. Click any `✔ Settled on Stellar` entry in the event feed to inspect its hash and open it directly on [Stellar Expert](https://stellar.expert/explorer/testnet).
 
@@ -290,7 +290,7 @@ Stellar testnet handles ~100 tx/s but each transaction takes 3–5 seconds to co
 A global simulation means every visitor sees the same state, meaning there are no fresh starts, but instead shared wallet exhaustion and interference between users. Per-session isolation guarantees every demo is predictable and independent.
 
 **Why a transaction limit?**  
-Stellar testnet wallets have finite lumen balances. Without a budget cap, a long-running session drains wallets and breaks the next demo. The 50 tx/session limit keeps the system demo-ready at all times without wallet maintenance.
+Stellar testnet wallets have finite lumen balances. To completely eliminate the risk of long-running tabs draining wallets and breaking the next demo unexpectedly, we enforce a generous 250 tx/session limit. With 20,000 XLM per agent, this guarantees the system remains perpetually demo-ready for thousands of hackathon judging sessions without manual topping up.
 
 ---
 
