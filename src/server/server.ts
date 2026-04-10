@@ -7,6 +7,11 @@ const PORT = Number(process.env.PORT ?? 3001);
 export async function startServer() {
   const app = Fastify({ logger: false });
 
+  // ── GET / — healthcheck for uptime monitors (Render keepalive) ─────
+  app.get("/", async (_req, reply) => {
+    reply.send({ status: "ok", service: "autonomics-core" });
+  });
+
   // ── GET /sessions — active session count (useful for debugging) ──────────
   app.get("/sessions", async (_req, reply) => {
     reply.send({ active: sessionManager.count() });
