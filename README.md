@@ -7,7 +7,7 @@
 ### 🎥 [Watch the Video pitch](https://youtu.be/0LGGX3qEfJQ)  
 ### 🎮 [Try the Live Demo](https://autonomics-core.vercel.app/)
 
-![Autonomics Demo](screenshots/autonomics.gif)
+![Autonomics Demo](screenshots/autonomics.mkv)
 
 ---
 
