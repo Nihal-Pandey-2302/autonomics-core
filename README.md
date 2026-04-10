@@ -183,8 +183,7 @@ If you click a transaction, you are not inspecting a log. You are inspecting a r
 
 ## 🎮 Live Demo
 
-**→ [autonomics.demo.link](https://autonomics.demo.link)**  
-*(substitute with your deployed URL)*
+**→ [autonomics-core.vercel.app](https://autonomics-core.vercel.app/)**  
 
 Try this:
 

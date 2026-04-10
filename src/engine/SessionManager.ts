@@ -21,9 +21,15 @@ class SessionManager {
   create(): SessionInfo {
     const id = `session-${Date.now()}-${++this.counter}`;
 
-    // First session (or if real slot is free) gets REAL mode
-    const allowRealTx = this.realSessionId === null;
-    const mode: SessionMode = allowRealTx ? "REAL" : "SIMULATED";
+    // Only allow 1 active session to ensure no Stellar sequence collisions.
+    // If a new connection arrives, we stop the old one (preventing ghost locks).
+    if (this.realSessionId) {
+      console.log(`[SESSION] Stealing REAL slot from old session: ${this.realSessionId}`);
+      this.stop(this.realSessionId);
+    }
+
+    const allowRealTx = true;
+    const mode: SessionMode = "REAL";
 
     const opts: SimulationOptions = {
       allowRealTx,
