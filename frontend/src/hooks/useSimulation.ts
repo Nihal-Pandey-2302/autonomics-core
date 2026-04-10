@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { AgentSnapshot, SimEvent, TickPayload } from '../types';
 
-const WS_URL     = 'ws://localhost:3001';
+const WS_URL     = import.meta.env.PROD ? 'wss://autonomics-core.onrender.com' : 'ws://localhost:3001';
 const MAX_FLOWS  = 30;
 const MAX_EVENTS = 80;
 
