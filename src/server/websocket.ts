@@ -31,12 +31,15 @@ export function attachWebSocket(httpServer: Server) {
     const onAsyncEvent = (ev: unknown) => {
       // Re-broadcast CONFIRMED/FAIL events as mini tick frames
       if (ws.readyState !== WebSocket.OPEN) return;
+      
+      const payloadObj = (simulation as any); // Access realTxCount safely
+
       const mini = {
         events:      [ev],
         sessionMode: session.mode,
         sessionMs:   Date.now() - session.startedAt,
         sessionLimit: SESSION_TIMEOUT_MS,
-        realTxCount: 0,
+        realTxCount: payloadObj.realTxCount ?? 0,
         realTxLimit:  50,
       };
       ws.send(JSON.stringify(mini), () => {});
