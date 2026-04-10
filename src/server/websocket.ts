@@ -40,7 +40,7 @@ export function attachWebSocket(httpServer: Server) {
         sessionMs:   Date.now() - session.startedAt,
         sessionLimit: SESSION_TIMEOUT_MS,
         realTxCount: payloadObj.realTxCount ?? 0,
-        realTxLimit:  50,
+        realTxLimit: payloadObj.options?.realTxLimit ?? 250,
       };
       ws.send(JSON.stringify(mini), () => {});
     };

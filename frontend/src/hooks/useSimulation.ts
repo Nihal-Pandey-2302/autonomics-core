@@ -30,7 +30,7 @@ export function useSimulation() {
   const [connected, setConnected] = useState(false);
   const [session,  setSession]  = useState<SessionState>({
     mode: null, ms: 0, limit: 240_000,
-    realTxCount: 0, realTxLimit: 50, ended: false
+    realTxCount: 0, realTxLimit: 250, ended: false
   });
 
   const wsRef = useRef<WebSocket | null>(null);

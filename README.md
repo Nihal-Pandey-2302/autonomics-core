@@ -4,6 +4,11 @@
 
 ---
 
+### 🎥 [Watch the Video pitch](https://youtu.be/0LGGX3qEfJQ)  
+### 🎮 [Try the Live Demo](https://autonomics-core.vercel.app/)
+
+---
+
 ## 🚀 What This Is
 
 Autonomics is a live machine economy.
