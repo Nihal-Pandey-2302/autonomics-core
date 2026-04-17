@@ -4,7 +4,7 @@
 
 ---
 
-### 🎥 [Watch the Video pitch](https://youtu.be/0LGGX3qEfJQ)  
+### 🎥 [Watch the Video pitch](https://youtu.be/g32IVpEpvjA)  
 ### 🎮 [Try the Live Demo](https://autonomics-core.vercel.app/)
 
 <video src="screenshots/untitled.mp4" width="100%" autoplay loop muted controls playsinline></video>
